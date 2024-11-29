@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Lixeira Inteligente</title>
+</head>
+<body>
+    <div class="title">
+        <h1>Lixeira Inteligente</h1>
+    </div>
+
+    <section class="controles">
+        <h2>Controles</h2>
+        <a class="button_fechar_tampa" href="/fechar-tampa">Fechar Tampa</a>
+        <a class="button_abrir_tampa" href="/abre-tampa">Abrir Tampa</a>
+    </section>
+
+    <section class="status_lixeira">
+        <h2>Status da Lixeira</h2>
+        <div class="license-status">
+            <div class="status-label">Status da Lixeira</div>
+            <div class="status-value">
+                {% if status_lixeira == True %}
+                    Disponível
+                {% else %}
+                    Indisponível
+                {% endif %}
+            </div>
+            <div class="details-label">Detalhes</div>
+            <div class="details-value">Última atualização: {{atualizacao}}</div>
+        </div>
+
+    </section>
+
+    <section class="monitoramento">
+        <h2>Monitoramento em tempo Real</h2>
+        <div class="real-time-monitoring">
+            <div class="occupation-label">Ocupação</div>
+            <div class="occupation-bar" style="width: {{ocup_lixeira}}"></div>
+            <h5>{{ocup_lixeira}} de ocupação</h5>
+        </div>
+    </section>
+
+    <section class="grafico">
+        <h1>Gráfico de Dados da ThingSpeak</h1>
+        <!-- Incorpora o gráfico ThingSpeak usando iframe -->
+        <iframe 
+            src="https://thingspeak.mathworks.com/channels/2746094/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" 
+            width="450" 
+            height="250" 
+            frameborder="0">
+        </iframe>
+    </section>
+
+    <section class="historico">
+        <h2>Historico</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Evento</th>
+            </tr>
+            {% for acao, horario in registro_tampa %}
+                <tr>
+                    <td>{{ acao }}</td>
+                    <td>{{ horario }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+</body>
+</html>

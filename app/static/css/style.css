@@ -1,0 +1,89 @@
+body{
+    align-items: center;
+    margin-left: 20px;
+}
+.title{
+    text-align: center;
+}
+
+.controles h2 {
+    margin: 5px;
+}
+
+.button_fechar_tampa{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 5px;
+}
+
+.button_abrir_tampa{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.license-status {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    
+}
+.status-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.status-value {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.details-label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.details-value {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.real-time-monitoring {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.occupation-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.occupation-bar {
+  height: 5px;
+  background-color: rgb(103, 103, 244);
+  border-radius: 10px;
+  width: 75%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+.grafico{
+  text-align: center;
+}
+
+.grafico iframe{
+  align-items: center;
+}
+
